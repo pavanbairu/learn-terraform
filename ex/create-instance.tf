@@ -23,3 +23,11 @@ output "web_ip" {
 output "web_ami" {
   value = aws_instance.web.ami
 }
+
+resource "aws_route53_record" "web" {
+  zone_id = "Z08846229MEF59DJAKAS"
+  name    = "web.pavanbairu.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.web.private_ip]
+}
