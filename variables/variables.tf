@@ -2,11 +2,11 @@ variable "sample_string" {
   default = "welcome to terraform"
 }
 
-output "display_simple_string" {
+output "display_sample_string1" {
   value = var.sample_string
 }
 
-output "display_sample_string" {
+output "display_sample_string2" {
   value = "value of string = ${var.sample_string}"
 }
 
