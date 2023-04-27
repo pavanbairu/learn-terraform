@@ -37,3 +37,17 @@ variable "sample_dictionary" {
 output "display_sample_dictionary_name" {
   value = var.sample_dictionary["name"]
 }
+
+#dynamic input passing
+variable "env" {} #run as terraform apply -var-file=dev.tfvars  terraform apply -var-file=prod.tfvars
+
+output "env" {   # passing the value from dev.tfvars or prod.tfvars. we should give load the filename in runtime
+  value = var.env
+}
+
+variable "auto_num1" {}
+
+output "auto_num1" { # passing the value from demo.auto.tfvars(the files with auto.tf or teraform.tf will automatically
+                      #loaded at runtime no need to explicitly mention the file names
+  value = var.auto_num1
+}
