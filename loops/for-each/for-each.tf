@@ -8,9 +8,9 @@ resource "null_resource" "fruits_map1" {
 
 variable "fruits_map1" {
   default = {
-    apple = {
-      name = "apple"
-      cost = 20
+    apple = {  #key
+      name = "apple" # value
+      cost = 20 # value
     }
     mango = {
       name = "mango"
