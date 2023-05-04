@@ -1,4 +1,9 @@
-module "module1" {
+module "module1_sample" {
   source = "./module1"
-  input = "pavan"
+  input = module.module2_sample.dummy # calls the dummy output block from module2 location
+}
+
+module "module2_sample" {
+  source = "./module2"
+
 }
